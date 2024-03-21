@@ -86,7 +86,7 @@
 
 
 
-        var info = '<div style="font-size:18px;font-weight:bold;margin-bottom:10px;">' + data['名称']  + ' / ' + data['大字'] + ' / ' + data['個体情報'] + '</div>';
+        var info = '<div style="font-size:18px;font-weight:bold;margin-bottom:10px;">' + data['名称']  +' ' + data['個体情報'] + '</div>';
         infoWindow[i] = new google.maps.InfoWindow({
           content: info
         });
@@ -100,7 +100,7 @@
           var latitude = markerData[i]['緯度'];
           if (!latitude) { continue; }
           addMarker(i, markerData[i]);
-          var name = markerData[i]['大字']+[' / ']+markerData[i]['個体情報'];
+          var name = markerData[i]['名称']+[' ']+markerData[i]['大字'];
 
           sidebar_html += `<b>${i + 1}</b> <a href="javascript:openWindow(${i})">${name}<\/a><br />`;
         }
