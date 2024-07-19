@@ -161,6 +161,45 @@
 		strokeWeight: 0.2                    //枠の透過率
 	}
         });	        
+
+	var markerLatLng5 = new google.maps.LatLng({
+          lat: Number(data['緯度5']),
+          lng: Number(data['経度5'])
+        });
+        marker[i] = new google.maps.Marker({
+          position: markerLatLng5,
+          map: map,
+	icon: {
+		fillColor: "#FF0000",                //塗り潰し色
+		fillOpacity: 0.8,                    //塗り潰し透過率
+		path: google.maps.SymbolPath.CIRCLE, //円を指定
+		scale: 5,                           //円のサイズ
+		strokeColor: "#FFFFFF00",              //枠の色
+		strokeWeight: 0.2                    //枠の透過率
+	}
+        });	        
+
+
+	var markerLatLng6 = new google.maps.LatLng({
+          lat: Number(data['緯度6']),
+          lng: Number(data['経度6'])
+        });
+        marker[i] = new google.maps.Marker({
+          position: markerLatLng6,
+          map: map,
+	icon: {
+		fillColor: "#FF0000",                //塗り潰し色
+		fillOpacity: 0.8,                    //塗り潰し透過率
+		path: google.maps.SymbolPath.CIRCLE, //円を指定
+		scale: 5,                           //円のサイズ
+		strokeColor: "#FFFFFF00",              //枠の色
+		strokeWeight: 0.2                    //枠の透過率
+	}
+        });	        
+
+
+
+
 	      
         var markerLatLng = new google.maps.LatLng({
           lat: Number(data['緯度']),
