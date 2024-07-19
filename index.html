@@ -100,26 +100,67 @@
 	}
         });
 
-        var info = '<div style="font-size:18px;font-weight:bold;margin-bottom:10px;">' + data['名称1']  +' / '+ data['時間1']+ '</div>';
+        var markerLatLng2 = new google.maps.LatLng({
+          lat: Number(data['緯度2']),
+          lng: Number(data['経度2'])
+        });
+        marker[i] = new google.maps.Marker({
+          position: markerLatLng2,
+          map: map,
+	icon: {
+		fillColor: "#FF0000",                //塗り潰し色
+		fillOpacity: 0.8,                    //塗り潰し透過率
+		path: google.maps.SymbolPath.CIRCLE, //円を指定
+		scale: 20,                           //円のサイズ
+		strokeColor: "#FF0000",              //枠の色
+		strokeWeight: 1.0                    //枠の透過率
+	},
+	label: {
+		text: data['名称2'],                           //ラベル文字
+		color: '#FFFFFF',                    //文字の色
+		fontSize: '15px'                     //文字のサイズ
+	}
+        });
+	      
+        var info1 = '<div style="font-size:18px;font-weight:bold;margin-bottom:10px;">' + data['名称1']  +' / '+ data['時間1']+ '</div>';
         infoWindow[i] = new google.maps.InfoWindow({
-          content: info
+          content: info1
+        });
+
+        var info2 = '<div style="font-size:18px;font-weight:bold;margin-bottom:10px;">' + data['名称2']  +' / '+ data['時間2']+ '</div>';
+        infoWindow[i] = new google.maps.InfoWindow({
+          content: info2
         });
 
         markerEvent(i);
       }
 
       function setData(markerData){
-        var sidebar_html = "";
+        var sidebar_html1 = "";
         for (var i = 0; i < markerData.length; i++) {
           var latitude = markerData[i]['緯度1'];
           if (!latitude) { continue; }
           addMarker(i, markerData[i]);
           var name = markerData[i]['名称1']+[' / ']+markerData[i]['時間1'];
 
-          sidebar_html += `<b>${i + 1}</b> <a href="javascript:openWindow(${i})">${name}<\/a><br />`;
+          sidebar_html1 += `<b>${i + 1}</b> <a href="javascript:openWindow(${i})">${name}<\/a><br />`;
         }
 
-        document.getElementById("sidebar").innerHTML = sidebar_html;
+        document.getElementById("sidebar").innerHTML = sidebar_html1;
+
+	      
+        var sidebar_html2 = "";
+        for (var i = 0; i < markerData.length; i++) {
+          var latitude = markerData[i]['緯度2'];
+          if (!latitude) { continue; }
+          addMarker(i, markerData[i]);
+          var name = markerData[i]['名称2']+[' / ']+markerData[i]['時間2'];
+
+          sidebar_html2 += `<b>${i + 1}</b> <a href="javascript:openWindow(${i})">${name}<\/a><br />`;
+        }
+
+        document.getElementById("sidebar").innerHTML = sidebar_html2;
+	      
       }
 
       function markerEvent(i) {
