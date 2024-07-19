@@ -94,13 +94,13 @@
 		strokeWeight: 1.0                    //枠の透過率
 	},
 	label: {
-		text: data['名称'],                           //ラベル文字
+		text: data['名称1'],                           //ラベル文字
 		color: '#FFFFFF',                    //文字の色
 		fontSize: '15px'                     //文字のサイズ
 	}
         });
 
-        var info = '<div style="font-size:18px;font-weight:bold;margin-bottom:10px;">' + data['名称']  +' / '+ data['時間']+ '</div>';
+        var info = '<div style="font-size:18px;font-weight:bold;margin-bottom:10px;">' + data['名称1']  +' / '+ data['時間1']+ '</div>';
         infoWindow[i] = new google.maps.InfoWindow({
           content: info
         });
@@ -114,7 +114,7 @@
           var latitude = markerData[i]['緯度1'];
           if (!latitude) { continue; }
           addMarker(i, markerData[i]);
-          var name = markerData[i]['名称']+[' / ']+markerData[i]['時間'];
+          var name = markerData[i]['名称1']+[' / ']+markerData[i]['時間1'];
 
           sidebar_html += `<b>${i + 1}</b> <a href="javascript:openWindow(${i})">${name}<\/a><br />`;
         }
