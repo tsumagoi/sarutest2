@@ -84,7 +84,7 @@
           lng: Number(data['経度1'])
         });
         marker[i] = new google.maps.Marker({
-          position: markerLatLng,
+          position: markerLatLng1,
           map: map,
 	icon: {
 		fillColor: "#FF0000",                //塗り潰し色
@@ -108,7 +108,7 @@
           lng: Number(data['経度2'])
         });
         marker[i] = new google.maps.Marker({
-          position: markerLatLng,
+          position: markerLatLng2,
           map: map,
 	icon: {
 		fillColor: "#FF0000",                //塗り潰し色
@@ -126,12 +126,12 @@
         });
 
 
-        var markerLatLng = new google.maps.LatLng({
+        var markerLatLng3 = new google.maps.LatLng({
           lat: Number(data['緯度3']),
           lng: Number(data['経度3'])
         });
         marker[i] = new google.maps.Marker({
-          position: markerLatLng,
+          position: markerLatLng3,
           map: map,
 	icon: {
 		fillColor: "#FF0000",                //塗り潰し色
