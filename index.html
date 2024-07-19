@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>嬬恋村クマ目撃情報</title>
+    <title>テストページ</title>
     <style>
       #map {
         height: 100%;
@@ -14,15 +14,15 @@
       }
       #sidebar {
         position: absolute;
-        top: 10%;
-        left: 72%;
-        width: 25%;
-        height: 40%;
+        bottom: 10px;
+        left: 10px;
+        width: 20%;
+        height: 20%;
         border: 1px solid #666;
         padding: 6px;
         background-color: white;
         font-family: Meriyo UI;
-        font-size: 14px;
+        font-size: 16x;
       }
     </style>
   </head>
@@ -74,19 +74,86 @@
         request.send();
       }
 
+
+
+
       function addMarker(i, data) {
-        var markerLatLng = new google.maps.LatLng({
-          lat: Number(data['緯度']),
-          lng: Number(data['経度'])
+
+        var markerLatLng1 = new google.maps.LatLng({
+          lat: Number(data['緯度1']),
+          lng: Number(data['経度1'])
         });
         marker[i] = new google.maps.Marker({
           position: markerLatLng,
-          map: map
+          map: map,
+	icon: {
+		fillColor: "#FF0000",                //塗り潰し色
+		fillOpacity: 0.8,                    //塗り潰し透過率
+		path: google.maps.SymbolPath.CIRCLE, //円を指定
+		scale: 20,                           //円のサイズ
+		strokeColor: "#FF0000",              //枠の色
+		strokeWeight: 1.0                    //枠の透過率
+	},
+	label: {
+		text: data['名称'],                           //ラベル文字
+		color: '#FFFFFF',                    //文字の色
+		fontSize: '15px'                     //文字のサイズ
+	}
         });
 
 
 
-        var info = '<div style="font-size:18px;font-weight:bold;margin-bottom:10px;">' + data['名称']  +' ' + data['個体情報'] + '</div>';
+        var markerLatLng2 = new google.maps.LatLng({
+          lat: Number(data['緯度2']),
+          lng: Number(data['経度2'])
+        });
+        marker[i] = new google.maps.Marker({
+          position: markerLatLng,
+          map: map,
+	icon: {
+		fillColor: "#FF0000",                //塗り潰し色
+		fillOpacity: 0.7,                    //塗り潰し透過率
+		path: google.maps.SymbolPath.CIRCLE, //円を指定
+		scale: 15,                           //円のサイズ
+		strokeColor: "#FF0000",              //枠の色
+		strokeWeight: 1.0                    //枠の透過率
+	},
+	label: {
+		text: data['名称'],                           //ラベル文字
+		color: '#FFFFFF',                    //文字の色
+		fontSize: '13px'                     //文字のサイズ
+	}
+        });
+
+
+        var markerLatLng = new google.maps.LatLng({
+          lat: Number(data['緯度3']),
+          lng: Number(data['経度3'])
+        });
+        marker[i] = new google.maps.Marker({
+          position: markerLatLng,
+          map: map,
+	icon: {
+		fillColor: "#FF0000",                //塗り潰し色
+		fillOpacity: 0.6,                    //塗り潰し透過率
+		path: google.maps.SymbolPath.CIRCLE, //円を指定
+		scale: 10,                           //円のサイズ
+		strokeColor: "#FF0000",              //枠の色
+		strokeWeight: 1.0                    //枠の透過率
+	},
+	label: {
+		text: data['名称'],                           //ラベル文字
+		color: '#FFFFFF',                    //文字の色
+		fontSize: '11px'                     //文字のサイズ
+	}
+        });
+
+
+
+
+
+
+        var info = '<div style="font-size:18px;font-weight:bold;margin-bottom:10px;">' + data['名称']  +' / '+ data['時間']+ '</div>';
         infoWindow[i] = new google.maps.InfoWindow({
           content: info
         });
@@ -100,7 +167,7 @@
           var latitude = markerData[i]['緯度'];
           if (!latitude) { continue; }
           addMarker(i, markerData[i]);
-          var name = markerData[i]['名称']+[' ']+markerData[i]['大字'];
+          var name = markerData[i]['名称']+[' / ']+markerData[i]['時間'];
 
           sidebar_html += `<b>${i + 1}</b> <a href="javascript:openWindow(${i})">${name}<\/a><br />`;
         }
@@ -121,7 +188,6 @@
         infoWindow[i].open(map, marker[i]);
         windowOpened = infoWindow[i];
       }
-      
     </script>
   </body>
 </html>
