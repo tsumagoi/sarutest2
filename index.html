@@ -78,12 +78,12 @@
 
 
       function addMarker(i, data) {
-        var markerLatLng = new google.maps.LatLng({
+        var markerLatLng1 = new google.maps.LatLng({
           lat: Number(data['緯度1']),
           lng: Number(data['経度1'])
         });
         marker[i] = new google.maps.Marker({
-          position: markerLatLng,
+          position: markerLatLng1,
           map: map,
 	icon: {
 		fillColor: "#FF0000",                //塗り潰し色
@@ -99,7 +99,6 @@
 		fontSize: '15px'                     //文字のサイズ
 	}
         });
-
 
         var info = '<div style="font-size:18px;font-weight:bold;margin-bottom:10px;">' + data['名称']  +' / '+ data['時間']+ '</div>';
         infoWindow[i] = new google.maps.InfoWindow({
