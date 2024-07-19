@@ -179,7 +179,7 @@
           addMarker(i, markerData[i]);
           var name = markerData[i]['名称']+[' / ']+markerData[i]['時間'];
 
-          sidebar_html1 += `<b>${i + 1}</b> <a href="javascript:openWindow(${i})">${name}<\/a><br />`;
+          sidebar_html += `<b>${i + 1}</b> <a href="javascript:openWindow(${i})">${name}<\/a><br />`;
         }
 
         document.getElementById("sidebar").innerHTML = sidebar_html;
