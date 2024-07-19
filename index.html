@@ -144,20 +144,11 @@
 	}
         });	      
 	      
-        var info1 = '<div style="font-size:18px;font-weight:bold;margin-bottom:10px;">' + data['名称1']  +' / '+ data['時間1']+ '</div>';
+        var info = '<div style="font-size:18px;font-weight:bold;margin-bottom:10px;">' + data['名称']  +' / '+ data['時間']+ '</div>';
         infoWindow[i] = new google.maps.InfoWindow({
           content: info1
         });
-	      
-        var info2 = '<div style="font-size:18px;font-weight:bold;margin-bottom:10px;">' + data['名称2']  +' / '+ data['時間2']+ '</div>';
-        infoWindow[i] = new google.maps.InfoWindow({
-          content: info2
-        });
 
-        var info3 = '<div style="font-size:18px;font-weight:bold;margin-bottom:10px;">' + data['名称3']  +' / '+ data['時間3']+ '</div>';
-        infoWindow[i] = new google.maps.InfoWindow({
-          content: info3
-        });
 
         markerEvent(i);
       }
