@@ -100,6 +100,13 @@
 	}
         });
 
+        var info1 = '<div style="font-size:18px;font-weight:bold;margin-bottom:10px;">' + data['名称1']  +' / '+ data['時間1']+ '</div>';
+        infoWindow[i] = new google.maps.InfoWindow({
+          content: info1
+        });
+
+        markerEvent(i);
+	      
         var markerLatLng2 = new google.maps.LatLng({
           lat: Number(data['緯度2']),
           lng: Number(data['経度2'])
@@ -122,6 +129,13 @@
 	}
         });
 
+        var info2 = '<div style="font-size:18px;font-weight:bold;margin-bottom:10px;">' + data['名称2']  +' / '+ data['時間2']+ '</div>';
+        infoWindow[i] = new google.maps.InfoWindow({
+          content: info2
+        });
+
+        markerEvent(i);
+	      
         var markerLatLng3 = new google.maps.LatLng({
           lat: Number(data['緯度3']),
           lng: Number(data['経度3'])
@@ -144,11 +158,10 @@
 	}
         });	      
 	      
-        var info = '<div style="font-size:18px;font-weight:bold;margin-bottom:10px;">' + data['名称']  +' / '+ data['時間']+ '</div>';
+        var info3 = '<div style="font-size:18px;font-weight:bold;margin-bottom:10px;">' + data['名称3']  +' / '+ data['時間3']+ '</div>';
         infoWindow[i] = new google.maps.InfoWindow({
-          content: info
+          content: info3
         });
-
 
         markerEvent(i);
       }
