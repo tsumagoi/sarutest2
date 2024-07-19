@@ -77,7 +77,7 @@
 
 
 
-      function addMarker(i, data) {
+      function addMarker1(i, data) {
         var markerLatLng1 = new google.maps.LatLng({
           lat: Number(data['緯度1']),
           lng: Number(data['経度1'])
@@ -106,10 +106,9 @@
         });
 
        markerEvent(i);
+       }
 
-
-
-	      
+      function addMarker2(i, data) {	      
         var markerLatLng2 = new google.maps.LatLng({
           lat: Number(data['緯度2']),
           lng: Number(data['経度2'])
