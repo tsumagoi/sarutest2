@@ -79,8 +79,8 @@
 
       function addMarker(i, data) {
         var markerLatLng = new google.maps.LatLng({
-          lat: Number(data['緯度']),
-          lng: Number(data['経度'])
+          lat: Number(data['緯度1']),
+          lng: Number(data['経度1'])
         });
         marker[i] = new google.maps.Marker({
           position: markerLatLng,
@@ -112,7 +112,7 @@
       function setData(markerData){
         var sidebar_html = "";
         for (var i = 0; i < markerData.length; i++) {
-          var latitude = markerData[i]['緯度'];
+          var latitude = markerData[i]['緯度1'];
           if (!latitude) { continue; }
           addMarker(i, markerData[i]);
           var name = markerData[i]['名称']+[' / ']+markerData[i]['時間'];
