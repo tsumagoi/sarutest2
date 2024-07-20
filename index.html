@@ -28,7 +28,7 @@
   </head>
   <body>
     <div id="map"></div>
-    <td><div id="sidebar">aaaaaa</div></td>
+    <td><div id="sidebar"></div></td>
     <script src="constants.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?language=ja&region=JP&key=AIzaSyAP3rtRtZc0QL5h7nkb7HjTRPfmA_qeSlw&callback=initMap" async defer></script>
     <script>
@@ -329,7 +329,7 @@
       }
 
       function setData(markerData){
-        var sidebar_html = "";
+        var sidebar_html = "aaa";
         for (var i = 0; i < markerData.length; i++) {
           var latitude = markerData[i]['緯度'];
           if (!latitude) { continue; }
