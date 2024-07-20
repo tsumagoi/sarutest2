@@ -329,14 +329,14 @@
       }
 
       function setData(markerData){
-        var sidebar_html = "aaa";
+        var sidebar_html = "各群れ3日間の行動歴";
         for (var i = 0; i < markerData.length; i++) {
           var latitude = markerData[i]['緯度'];
           if (!latitude) { continue; }
           addMarker(i, markerData[i]);
           var name = markerData[i]['名称']+[' / ']+markerData[i]['時間'];
 
-          sidebar_html += ` <a href="javascript:openWindow(${i})">${name}<\/a><br />`;
+          sidebar_html += ` <br /><a href="javascript:openWindow(${i})">${name}<\/a>`;
         }
 
         document.getElementById("sidebar").innerHTML = sidebar_html;
