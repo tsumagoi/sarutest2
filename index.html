@@ -145,6 +145,28 @@
 	}
         });	      
 
+        var markerLatLng13 = new google.maps.LatLng({
+          lat: Number(data['緯度13']),
+          lng: Number(data['経度13'])
+        });
+        marker[i] = new google.maps.Marker({
+          position: markerLatLng13,
+          map: map,
+	icon: {
+		fillColor: "#FFFFFF00",                //塗り潰し色
+		fillOpacity: 0,                    //塗り潰し透過率
+		path: google.maps.SymbolPath.CIRCLE, //円を指定
+		scale: 20,                           //円のサイズ
+		strokeColor: "#FF0000",              //枠の色
+		strokeWeight: 0.3                    //枠の透過率
+	},
+	label: {
+		text: data['名称13'],                           //ラベル文字
+		color: '#FF0000',                    //文字の色
+		fontSize: '15px'                     //文字のサイズ
+	}
+        });
+	      
 	var markerLatLng4 = new google.maps.LatLng({
           lat: Number(data['緯度4']),
           lng: Number(data['経度4'])
