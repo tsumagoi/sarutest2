@@ -78,6 +78,19 @@
 
 
       function addMarker(i, data) {
+
+      var lineSymbol = {
+      path: google.maps.SymbolPath.FORWARD_CLOSED_ARROW
+      };
+      var line = new google.maps.Polyline({
+      path: [{lat: 22.291, lng: 153.027}, {lat: 18.291, lng: 153.027}],
+      icons: [{
+      icon: lineSymbol,
+      offset: '100%'
+      }],
+      map: map
+      });
+	            
         var markerLatLng1 = new google.maps.LatLng({
           lat: Number(data['緯度1']),
           lng: Number(data['経度1'])
