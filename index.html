@@ -81,14 +81,14 @@
 
 	      
       var lineSymbol1 = {
-      path: google.maps.SymbolPath.FORWARD_CLOSED_ARROW
+      path: google.maps.SymbolPath.FORWARD_CLOSED_ARROW,
+      strokeColor: "#FF0000",                
+      strokeOpacity: 0.8
       };
       var line = new google.maps.Polyline({
       path: [{lat: Number(data['緯度4']), lng: Number(data['経度4'])}, 
 	     {lat: Number(data['緯度5']), lng: Number(data['経度5'])}],
       icons: [{
-      strokeColor: "#FF0000",                
-      strokeOpacity: 0.8,  
       icon: lineSymbol1,
       offset: '90%'
       }],
@@ -99,18 +99,15 @@
 	      
       var lineSymbol2 = {
       path: 'M 0,-1 0,1',
-      strokeOpacity: 1,
+      strokeColor: "#FF0000",                
+      strokeOpacity: 0.55,    
       scale: 4
       };
       var line = new google.maps.Polyline({
       path: [{lat: Number(data['緯度6']), lng: Number(data['経度6'])}, 
 	     {lat: Number(data['緯度7']), lng: Number(data['経度7'])}],
       strokeOpacity: 0,
-      icons: [{
-
-
-      strokeColor: "#FF0000",                
-      strokeOpacity: 0.55,                   
+      icons: [{               
       icon: lineSymbol2,
       offset: '0',
       repeat: '20px'
@@ -122,15 +119,14 @@
 	      
       var lineSymbol3 = {
       path: google.maps.SymbolPath.FORWARD_CLOSED_ARROW,
-      strokeOpacity: 1
+      strokeColor: "#FF0000",                
+      strokeOpacity: 0.55,    
       };
       var line = new google.maps.Polyline({
       path: [{lat: Number(data['緯度6']), lng: Number(data['経度6'])}, 
 	     {lat: Number(data['緯度7']), lng: Number(data['経度7'])}],
       strokeOpacity: 0,
       icons: [{
-      strokeColor: "#FF0000",                
-      strokeOpacity: 0.55,  
       icon: lineSymbol3,
       offset: '100%'
       }],
