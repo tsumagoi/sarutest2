@@ -83,7 +83,8 @@
       path: google.maps.SymbolPath.FORWARD_CLOSED_ARROW
       };
       var line = new google.maps.Polyline({
-      path: [{lat: 22.291, lng: 153.027}, {lat: 18.291, lng: 153.027}],
+      path: [{lat: Number(data['緯度14']), lng: Number(data['緯度14'])}, 
+	     {lat: Number(data['緯度15']), lng: Number(data['緯度15'])}],
       icons: [{
       icon: lineSymbol,
       offset: '100%'
