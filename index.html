@@ -114,6 +114,21 @@
 
 
 	      
+      var lineSymbol3 = {
+      path: google.maps.SymbolPath.FORWARD_CLOSED_ARROW
+      };
+      var line = new google.maps.Polyline({
+      path: [{lat: Number(data['緯度4']), lng: Number(data['経度4'])}, 
+	     {lat: Number(data['緯度5']), lng: Number(data['経度5'])}],
+      strokeOpacity: 0,
+      icons: [{
+      icon: lineSymbol3,
+      offset: '100%'
+      }],
+      map: map
+      });
+	      
+	      
         var markerLatLng1 = new google.maps.LatLng({
           lat: Number(data['緯度1']),
           lng: Number(data['経度1'])
