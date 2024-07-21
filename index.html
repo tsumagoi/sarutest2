@@ -79,19 +79,41 @@
 
       function addMarker(i, data) {
 
-      var lineSymbol = {
+	      
+      var lineSymbol1 = {
       path: google.maps.SymbolPath.FORWARD_CLOSED_ARROW
       };
       var line = new google.maps.Polyline({
       path: [{lat: Number(data['緯度14']), lng: Number(data['経度14'])}, 
 	     {lat: Number(data['緯度15']), lng: Number(data['経度15'])}],
       icons: [{
-      icon: lineSymbol,
-      offset: '90%'
+      icon: lineSymbol1,
+      offset: '80%'
       }],
       map: map
       });
-	            
+
+
+	      
+      var lineSymbol2 = {
+      path: 'M 0,-1 0,1',
+      strokeOpacity: 1,
+      scale: 4
+      };
+      var line = new google.maps.Polyline({
+      path: [{lat: Number(data['緯度16']), lng: Number(data['経度16'])}, 
+	     {lat: Number(data['緯度17']), lng: Number(data['経度17'])}],
+      strokeOpacity: 0,
+      icons: [{
+      icon: lineSymbol2,
+      offset: '0',
+      repeat: '20px'
+      }],
+      map: map
+      });
+
+
+	      
         var markerLatLng1 = new google.maps.LatLng({
           lat: Number(data['緯度1']),
           lng: Number(data['経度1'])
