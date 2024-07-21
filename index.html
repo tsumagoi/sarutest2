@@ -102,7 +102,7 @@
       var lineSymbol2 = {
       path: 'M 0,-1 0,1',
       strokeColor: "#FFFFFF",                
-      strokeOpacity: 0.9,    
+      strokeOpacity: 1,    
       scale: 4
       };
       var line = new google.maps.Polyline({
@@ -122,7 +122,7 @@
       var lineSymbol3 = {
       path: google.maps.SymbolPath.FORWARD_CLOSED_ARROW,
       strokeColor: "#FFFFFF",                
-      strokeOpacity: 0.9  
+      strokeOpacity: 1  
       };
       var line = new google.maps.Polyline({
       path: [{lat: Number(data['緯度6']), lng: Number(data['経度6'])}, 
@@ -231,7 +231,7 @@
       }
 
       function setData(markerData){
-        var sidebar_html = "[濃赤色]現在の位置 / [薄赤色]過去の位置 / [赤点線]移動予測";
+        var sidebar_html = "[濃赤色]現在の位置 / [薄赤色]過去の位置 / [白点線]移動予測";
         for (var i = 0; i < markerData.length; i++) {
           var latitude = markerData[i]['緯度'];
           if (!latitude) { continue; }
