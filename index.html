@@ -231,7 +231,7 @@
       }
 
       function setData(markerData){
-        var sidebar_html = "[濃赤色]現在の位置 / [薄赤色]過去の位置 / [白点線]移動予測";
+        var sidebar_html = "[濃🔴]最新の位置 / [薄🔴]過去の位置 / [・・・→]移動予測";
         for (var i = 0; i < markerData.length; i++) {
           var latitude = markerData[i]['緯度'];
           if (!latitude) { continue; }
