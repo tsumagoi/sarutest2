@@ -117,23 +117,6 @@
       map: map
       });
 
-
-	      
-      var lineSymbol3 = {
-      path: google.maps.SymbolPath.FORWARD_CLOSED_ARROW,
-      strokeColor: "#FF0000",                
-      strokeOpacity: 0.3
-      };
-      var line = new google.maps.Polyline({
-      path: [{lat: Number(data['緯度6']), lng: Number(data['経度6'])}, 
-	     {lat: Number(data['緯度7']), lng: Number(data['経度7'])}],
-      strokeOpacity: 0,
-      icons: [{
-      icon: lineSymbol3,
-      offset: '100%'
-      }],
-      map: map
-      });
 	      
 	      
         var markerLatLng1 = new google.maps.LatLng({
@@ -231,7 +214,7 @@
       }
 
       function setData(markerData){
-        var sidebar_html = "[濃🔴]最新の位置 / [薄🔴]過去の位置 / [点線]移動予測";
+        var sidebar_html = "[濃🔴]最新位置 / [薄🔴]過去位置";
         for (var i = 0; i < markerData.length; i++) {
           var latitude = markerData[i]['緯度'];
           if (!latitude) { continue; }
