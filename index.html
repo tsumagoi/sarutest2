@@ -135,6 +135,82 @@
       map: map
       });
 	      
+      var lineSymbol4 = {
+      path: google.maps.SymbolPath.FORWARD_CLOSED_ARROW,
+      strokeColor: "#FF0000",                
+      strokeOpacity: 0.5,
+      };
+      var line = new google.maps.Polyline({
+      path: [{lat: Number(data['緯度1']), lng: Number(data['経度1'])}, 
+	     {lat: Number(data['緯度9']), lng: Number(data['経度9'])}],
+　　　　　　　　　　　　strokeColor: "#FF0000",                
+      strokeOpacity: 0,
+      icons: [{
+      icon: lineSymbol4,
+      strokeColor: "#FF0000",                
+      strokeOpacity: 0,
+      offset: '100%'
+      }],
+      map: map
+      });
+
+	      
+      var lineSymbol5 = {
+      path: 'M 0,-1 0,1',
+      strokeColor: "#FF0000",  
+      strokeOpacity: 0.5,
+      scale: 4
+      };
+      var line = new google.maps.Polyline({
+      path: [{lat: Number(data['緯度1']), lng: Number(data['経度1'])}, 
+	     {lat: Number(data['緯度9']), lng: Number(data['経度9'])}],
+      strokeOpacity: 0,
+      icons: [{
+      icon: lineSymbol5,
+      offset: '0',
+      repeat: '20px'
+      }],
+      map: map
+      });
+	      
+      var lineSymbol6 = {
+      path: google.maps.SymbolPath.FORWARD_CLOSED_ARROW,
+      strokeColor: "#FF0000",                
+      strokeOpacity: 0.5,
+      };
+      var line = new google.maps.Polyline({
+      path: [{lat: Number(data['緯度1']), lng: Number(data['経度1'])}, 
+	     {lat: Number(data['緯度10']), lng: Number(data['経度10'])}],
+　　　　　　　　　　　　strokeColor: "#FF0000",                
+      strokeOpacity: 0,
+      icons: [{
+      icon: lineSymbol6,
+      strokeColor: "#FF0000",                
+      strokeOpacity: 0,
+      offset: '100%'
+      }],
+      map: map
+      });
+
+	      
+      var lineSymbol7 = {
+      path: 'M 0,-1 0,1',
+      strokeColor: "#FF0000",  
+      strokeOpacity: 0.5,
+      scale: 4
+      };
+      var line = new google.maps.Polyline({
+      path: [{lat: Number(data['緯度1']), lng: Number(data['経度1'])}, 
+	     {lat: Number(data['緯度10']), lng: Number(data['経度10'])}],
+      strokeOpacity: 0,
+      icons: [{
+      icon: lineSymbol7,
+      offset: '0',
+      repeat: '20px'
+      }],
+      map: map
+      });
+	      
 	      
         var markerLatLng1 = new google.maps.LatLng({
           lat: Number(data['緯度1']),
