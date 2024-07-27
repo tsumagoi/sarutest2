@@ -104,17 +104,33 @@
       path: [{lat: Number(data['緯度1']), lng: Number(data['経度1'])}, 
 	     {lat: Number(data['緯度8']), lng: Number(data['経度8'])}],
 　　　　　　　　　　　　strokeColor: "#FF0000",                
-      strokeOpacity: 1,
+      strokeOpacity: 0.5,
       icons: [{
       icon: lineSymbol2,
       strokeColor: "#FF0000",                
-      strokeOpacity: 1,
+      strokeOpacity: 0.5,
       offset: '100%'
       }],
       map: map
       });
-	      
 
+	      
+      var lineSymbo3 = {
+      path: 'M 0,-1 0,1',
+      strokeOpacity: 1,
+      scale: 4
+      };
+      var line = new google.maps.Polyline({
+      path: [{lat: Number(data['緯度1']), lng: Number(data['経度1'])}, 
+	     {lat: Number(data['緯度8']), lng: Number(data['経度8'])}],
+      strokeOpacity: 0,
+      icons: [{
+      icon: lineSymbol3,
+      offset: '0',
+      repeat: '20px'
+      }],
+      map: map
+      });
 	      
 	      
         var markerLatLng1 = new google.maps.LatLng({
