@@ -99,12 +99,14 @@
 
       var lineSymbol2 = {
       path: google.maps.SymbolPath.FORWARD_CLOSED_ARROW,
+      strokeColor: "#FF0000",                
+      strokeOpacity: 0.5,
       };
       var line = new google.maps.Polyline({
       path: [{lat: Number(data['緯度1']), lng: Number(data['経度1'])}, 
 	     {lat: Number(data['緯度8']), lng: Number(data['経度8'])}],
 　　　　　　　　　　　　strokeColor: "#FF0000",                
-      strokeOpacity: 0.5,
+      strokeOpacity: 0,
       icons: [{
       icon: lineSymbol2,
       strokeColor: "#FF0000",                
